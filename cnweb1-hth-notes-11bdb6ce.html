@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 站点介绍与使用说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f4f6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1f2a3a;
+            line-height: 1.6;
+            padding: 2.4rem 1.2rem;
+        }
+
+        .page-wrap {
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        /* hero 区域 */
+        .hero {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 3.2rem 2.8rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e6eaef;
+            margin-bottom: 2.8rem;
+            transition: all 0.2s ease;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #162029;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .subhead {
+            font-size: 1.1rem;
+            color: #4b5a6e;
+            border-left: 4px solid #98a9bc;
+            padding-left: 1.2rem;
+            margin: 1.2rem 0 1.8rem 0;
+        }
+
+        .hero p {
+            max-width: 720px;
+            color: #314253;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #eef2f7;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #2a3c4f;
+            border: 1px solid #d9dfe7;
+            margin-top: 1.2rem;
+        }
+
+        /* 卡片容器 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2.4rem;
+            border: 1px solid #e3e8ef;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1a293b;
+            letter-spacing: -0.01em;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 1.4rem 0 0.6rem 0;
+            color: #253544;
+        }
+
+        .card p {
+            margin-bottom: 0.8rem;
+            color: #314759;
+        }
+
+        .card ul {
+            padding-left: 1.4rem;
+            margin: 0.8rem 0 1rem 0;
+            list-style: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #2a3e52;
+        }
+
+        .card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #7e94aa;
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: #f6f9fd;
+            border-radius: 16px;
+            padding: 1.4rem 1.8rem;
+            margin: 1.4rem 0 0.8rem 0;
+            border-left: 4px solid #7f96b0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0.3rem;
+        }
+
+        .btn-group {
+            margin-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 0.5rem 1.3rem;
+            border: 1px solid #bcc9da;
+            border-radius: 60px;
+            background: transparent;
+            font-size: 0.9rem;
+            color: #1f3449;
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+
+        .btn-outline:hover {
+            background: #eef2f8;
+            border-color: #8fa4bb;
+        }
+
+        .inline-link {
+            color: #1d4b6e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #b2c4d9;
+            transition: border 0.2s;
+        }
+
+        .inline-link:hover {
+            border-bottom: 1px solid #1d4b6e;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e5eaef;
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+            color: #1d3144;
+        }
+
+        .faq-answer {
+            color: #3d536a;
+            font-size: 0.95rem;
+        }
+
+        .note-label {
+            display: inline-block;
+            background: #eef2f7;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.8rem;
+            border-radius: 30px;
+            color: #2c4056;
+            letter-spacing: 0.02em;
+            border: 1px solid #dce2ea;
+            margin-right: 0.5rem;
+        }
+
+        .site-footer {
+            border-top: 1px solid #dce2ea;
+            margin-top: 3rem;
+            padding-top: 1.6rem;
+            font-size: 0.85rem;
+            color: #5b6f84;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1.6rem 0.8rem;
+            }
+
+            .hero {
+                padding: 2rem 1.4rem;
+                border-radius: 24px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.6rem 1.2rem;
+                border-radius: 20px;
+            }
+
+            .highlight-box {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero section -->
+    <div class="hero">
+        <h1>华体会 · 站点初步了解</h1>
+        <div class="subhead">一个面向日常信息与内容服务的线上位置</div>
+        <p>把「华体会」看作一个你可以随时打开、了解资讯、浏览内容的网络站点。这里没有复杂的门槛，界面清晰，响应也够快——适合自己泡杯茶、慢慢翻阅。无论你是首次接触还是老朋友，都不妨从首页开始，看看为你准备了哪些内容模块。</p>
+        <div class="tagline">✔ 更新稳定 · 内容结构简明</div>
+    </div>
+
+    <!-- 卡片1：摘要 & 亮点 -->
+    <div class="card-grid">
+        <div class="card">
+            <h2>站点摘要与功能倾向</h2>
+            <p><a href="https://cnweb1-hth.com" class="inline-link">华体会</a> 从设计上偏向于内容呈现与信息聚合，首页模块划分清楚，焦点区域突出。整体使用体验比较顺滑，没有多余弹窗或过度跳转，打开后可以直接浏览当前更新。适合作为日常信息获取的补充渠道，也适合只想安静看看内容的用户。</p>
+
+            <div class="highlight-box">
+                <p><span class="note-label">亮点</span> 卡片式分区、弱对比配色、内容层级鲜明 —— 视觉上不容易疲劳，浏览节奏可以由自己掌握。</p>
+            </div>
+
+            <ul>
+                <li>内容以卡片和列表形式组织，分类清晰</li>
+                <li>页面加载轻快，移动端适配友好</li>
+                <li>无明显强制注册或信息收集入口</li>
+            </ul>
+        </div>
+
+        <!-- 卡片2：使用建议 + 场景 -->
+        <div class="card">
+            <h2>使用建议 & 常见场景</h2>
+            <p>如果你习惯在碎片时间阅读一些短内容，或者想快速浏览当天更新的栏目，可以直接进入 <a href="https://cnweb1-hth.com" class="inline-link">华体会</a> 首页，从上往下滑动即可。页面没有过度设计的交互动效，所以即使在网络环境一般的情况下，内容也能较快展示。</p>
+            <h3>适合这样用</h3>
+            <ul>
+                <li>午休或通勤时，打开首页浏览最新条目</li>
+                <li>想找个不吵闹、不刷屏的信息页面</li>
+                <li>测试自己的网络连通性（轻量级页面，反馈直接）</li>
+            </ul>
+            <div class="btn-group">
+                <span class="btn-outline">📋 内容优先</span>
+                <span class="btn-outline">🧘 低干扰浏览</span>
+                <span class="btn-outline">📱 移动端友好</span>
+            </div>
+        </div>
+
+        <!-- 卡片3：可信但克制的说明 + FAQ摘要 -->
+        <div class="card">
+            <h2>关于可信度与使用说明</h2>
+            <p>这个站点本身由常规网络服务搭建，内容更新由运营方维护。作为普通访客，你不需要担心复杂的授权或数据收集 —— 页面上没有嵌入不必要的第三方脚本。当然，任何线上资源我们都建议根据自身情况合理使用，不依赖单一信息源。下面是一些常见疑问的简要回答：</p>
+
+            <div class="faq-item">
+                <div class="faq-question">Q：首次打开需要注意什么？</div>
+                <div class="faq-answer">直接访问 <a href="https://cnweb1-hth.com" class="inline-link">华体会</a> 即可，首页内容完全可见，无需登录或下载。建议使用最新版浏览器，兼容性更好。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q：内容更新频率如何？</div>
+                <div class="faq-answer">大体上保持定期更新，但不会过于频繁。适合隔一两天上来看看，不必实时刷新。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q：移动端体验和电脑端差别大吗？</div>
+                <div class="faq-answer">布局会自适应，字体和间距在手机上同样舒适。功能一致，可以随时随地使用。</div>
+            </div>
+            <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #4f657d;">如果你还有其他疑问，也可以通过站点内页的常规途径了解，页面结构本身比较透明。</p>
+        </div>
+    </div>
+
+    <!-- 提示条（非链接文案） -->
+    <div style="background: #ffffff; border-radius: 20px; padding: 1.2rem 2rem; border: 1px solid #e3e8ef; box-shadow: 0 4px 12px rgba(0,0,0,0.02); margin-bottom: 2.2rem;">
+        <p style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin: 0; color: #2b4054;">
+            <span style="background: #dce4ed; border-radius: 40px; padding: 0.1rem 0.9rem; font-size: 0.8rem;">📌 备注</span>
+            本页面仅作站点介绍，不构成任何形式的使用承诺。实际体验以访问 <a href="https://cnweb1-hth.com" class="inline-link">华体会</a> 为准，请根据自身网络与设备情况合理使用。
+        </p>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="site-footer">
+        <span>站点索引页 · 内容仅供参考</span>
+        <span>持续更新中</span>
+    </div>
+
+</div>
+</body>
+</html>
